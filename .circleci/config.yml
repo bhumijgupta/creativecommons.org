@@ -33,10 +33,10 @@ jobs:
                   name: Run link-checker
                   command: |
                       cd ~/cc-link-checker
-                      mkdir test-reports
-                      pipenv run python ./link_checker.py --output-error test-reports/errorlog.txt --local
+                      mkdir ../creativecommons.org/test-reports
+                      pipenv run python ./link_checker.py --output-error ../creativecommons.org/test-reports/errorlog.txt --local
             - store_test_results:
-                  path: ~/cc-link-checker/test-reports
+                  path: test-reports
 workflows:
     version: 2
     workflow:
