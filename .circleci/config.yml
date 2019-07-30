@@ -22,11 +22,12 @@ jobs:
             - run:
                   name: clone link-checker
                   command: |
-                      git clone git@github.com:creativecommons/cc-link-checker.git ~/cc-link-checker
+                      git clone https://github.com/creativecommons/cc-link-checker.git ~/cc-link-checker
             - run:
                   name: Install dependencies
                   command: |
                       cd ~/cc-link-checker
+                      git checkout junit-xml
                       sudo pip install pipenv
                       pipenv install
             - run:
@@ -38,6 +39,8 @@ jobs:
             - store_artifacts:
                   path: ~/cc-link-checker/test-reports
                   destination: links-result
+            - store_test_results:
+                  path: test-summary
 
 workflows:
     version: 2
