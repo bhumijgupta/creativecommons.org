@@ -40,7 +40,7 @@ jobs:
                   path: ~/cc-link-checker/test-reports
                   destination: links-result
             - store_test_results:
-                  path: test-summary
+                  path: ~/cc-link-checker/test-summary
 
 workflows:
     version: 2
